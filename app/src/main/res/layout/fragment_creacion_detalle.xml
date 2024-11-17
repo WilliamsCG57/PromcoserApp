@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.ParteDiario.CreacionDetalleFragment">
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="16dp"
+        android:background="#BA0909"
+        android:text="@string/elim"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:background="#BA0909"
+        android:text="@string/edit"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/tv5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:background="#BA0909"
+        android:text="@string/horaFIN"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/tv3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:background="#BA0909"
+        android:text="@string/descr"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/tv4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:background="#BA0909"
+        android:text="@string/trab"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/tv6"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:background="#BA0909"
+        android:text="@string/horaINI"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/tv2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCreacionDetalle"
+        android:layout_width="406dp"
+        android:layout_height="630dp"
+        android:layout_marginTop="172dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="364dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#BA0909"
+        android:text="@string/cerrrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvCreacionDetalle" />
+</androidx.constraintlayout.widget.ConstraintLayout>

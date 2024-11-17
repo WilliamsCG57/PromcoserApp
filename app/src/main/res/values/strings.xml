@@ -28,6 +28,18 @@
     <string name="menu_parte">Parte Diario</string>
     <string name="menu_register">Registro</string>
     <string name="splastext">BIENVENIDO A LA APP DE \nOPERACIONES DE PROMCOSER</string>
+    <string name="crearDetalle">Crear</string>
+    <string name="confirDetal">Confirmar Detalle</string>
+    <string name="masdetal">Mas Detalle</string>
+    <string name="btnCDEditar">Editar</string>
+    <string name="btnCDEliminar">Eliminar</string>
+    <string name="horaINI">Hor.Ini</string>
+    <string name="horaFIN">Hor.Fin</string>
+    <string name="trab">Trabajo</string>
+    <string name="descr">Descrip.</string>
+    <string name="edit">Editar</string>
+    <string name="elim">Eliminar</string>
+    <string name="cerrrar">Cerrar</string>
 
 
 </resources>
