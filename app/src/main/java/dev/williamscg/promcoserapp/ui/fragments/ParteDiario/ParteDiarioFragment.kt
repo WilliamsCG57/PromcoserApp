@@ -19,9 +19,13 @@ class ParteDiarioFragment : Fragment() {
         // Inflate the layout for this fragment
         val boton = view.findViewById<Button>(R.id.btnCrearDetalle)
         val boton2 = view.findViewById<Button>(R.id.btnMasDetalle)
+
         boton2.setOnClickListener {
-            findNavController().navigate(R.id.creacionDetalleFragment)
+            val bundle = Bundle()
+            bundle.putString("idParte", "1")
+            findNavController().navigate(R.id.creacionDetalleFragment, bundle)
         }
+
 
         boton.setOnClickListener {
             findNavController().navigate(R.id.crearParteDiarioFragment)

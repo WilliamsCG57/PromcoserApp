@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             val email = etEmailLogin.text.toString()
             val password = etPasswordLogin.text.toString()
 
-            if (email == "usuario@ejemplo.com" && password == "123456") {
+            if (email == "admin" && password == "123") {
                 // Login correcto, iniciar la siguiente actividad
                 val intent = Intent(this, PrincipalActivity::class.java)
                 startActivity(intent)
