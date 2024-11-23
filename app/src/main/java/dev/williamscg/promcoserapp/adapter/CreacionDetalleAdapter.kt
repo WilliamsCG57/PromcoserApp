@@ -12,7 +12,8 @@ import dev.williamscg.promcoserapp.model.CreacionDetalleModel
 
 class CreacionDetalleAdapter (
     private val lstCreacionDetalle: List<CreacionDetalleModel>,
-    private val onEditarClick: (CreacionDetalleModel) -> Unit
+    private val onDeleteClick: (CreacionDetalleModel) -> Unit,
+    private val onDetailClick: (CreacionDetalleModel) -> Unit
 ) :
     RecyclerView.Adapter<CreacionDetalleAdapter.ViewHolder>() {
 
@@ -21,7 +22,7 @@ class CreacionDetalleAdapter (
         val tvHoraInicio = itemView.findViewById<TextView>(R.id.tvHoraInicio)
         val tvHoraFin = itemView.findViewById<TextView>(R.id.tvHoraFin)
         val icTrabajo = itemView.findViewById<ImageView>(R.id.icTrabajo)
-        val btnEditar = itemView.findViewById<TextView>(R.id.btnCDEditar)
+        val btnEliminar = itemView.findViewById<TextView>(R.id.btnCDEditar)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -37,11 +38,11 @@ class CreacionDetalleAdapter (
         val itemCreacionDetalle = lstCreacionDetalle[position]
         holder.tvHoraInicio.text = itemCreacionDetalle.horaInicio
         holder.tvHoraFin.text = itemCreacionDetalle.horaFin
-        holder.btnEditar.setOnClickListener {
-            onEditarClick(itemCreacionDetalle)
+        holder.btnEliminar.setOnClickListener {
+            onDeleteClick(itemCreacionDetalle)
         }
         holder.icTrabajo.setOnClickListener {
-            onEditarClick(itemCreacionDetalle)
+            onDetailClick(itemCreacionDetalle)
         }
     }
 }
