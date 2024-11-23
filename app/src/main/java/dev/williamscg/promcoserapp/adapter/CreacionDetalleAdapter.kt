@@ -20,7 +20,7 @@ class CreacionDetalleAdapter (
     {
         val tvHoraInicio = itemView.findViewById<TextView>(R.id.tvHoraInicio)
         val tvHoraFin = itemView.findViewById<TextView>(R.id.tvHoraFin)
-        val tvTrabajo = itemView.findViewById<TextView>(R.id.tvTrabajo)
+        val icTrabajo = itemView.findViewById<ImageView>(R.id.icTrabajo)
         val btnEditar = itemView.findViewById<TextView>(R.id.btnCDEditar)
     }
 
@@ -37,11 +37,10 @@ class CreacionDetalleAdapter (
         val itemCreacionDetalle = lstCreacionDetalle[position]
         holder.tvHoraInicio.text = itemCreacionDetalle.horaInicio
         holder.tvHoraFin.text = itemCreacionDetalle.horaFin
-        holder.tvTrabajo.text = itemCreacionDetalle.trabajoEfectuado
         holder.btnEditar.setOnClickListener {
             onEditarClick(itemCreacionDetalle)
         }
-        holder.tvHoraFin.setOnClickListener {
+        holder.icTrabajo.setOnClickListener {
             onEditarClick(itemCreacionDetalle)
         }
     }

@@ -36,7 +36,7 @@ class CreacionDetalleFragment : Fragment() {
             ?: throw IllegalArgumentException("idParte es obligatorio")
 
         adapter = CreacionDetalleAdapter(emptyList()) { detalle ->
-            deleteDetail(detalle.idDetalleParteDiario)
+            deactivateDetail(detalle.idDetalleParteDiario)
         }
 
         recyclerView.adapter = adapter
@@ -48,9 +48,25 @@ class CreacionDetalleFragment : Fragment() {
         fetchDetailsFromApi()
     }
 
-    fun deleteDetail(identificador: Int) {
-        Toast.makeText(context, "Eliminar: ${identificador}", Toast.LENGTH_SHORT).show()
+    private fun deactivateDetail(identificador: Int) {
+        Toast.makeText(context, "Eliminando: $identificador", Toast.LENGTH_SHORT).show()
+
+        val apiService = ApiClient.instance
+        apiService.deactivateDetail(identificador).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    Toast.makeText(context, "Eliminado correctamente", Toast.LENGTH_SHORT).show()
+                    fetchDetailsFromApi()
+                } else {
+                    Toast.makeText(context, "Error al eliminar: ${response.code()}", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                Toast.makeText(context, "Fallo en la conexión: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
+
 
     private fun fetchDetailsFromApi() {
         val apiService = ApiClient.instance
@@ -62,7 +78,7 @@ class CreacionDetalleFragment : Fragment() {
                 if (response.isSuccessful) {
                     val lstCreacionDetalle = response.body() ?: emptyList()
                     adapter = CreacionDetalleAdapter(lstCreacionDetalle) { detalle ->
-                        deleteDetail(detalle.idDetalleParteDiario)
+                        deactivateDetail(detalle.idDetalleParteDiario)
                     }
                     recyclerView.adapter = adapter
                 } else {
