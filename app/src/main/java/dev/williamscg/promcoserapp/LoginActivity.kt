@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,21 +36,15 @@ class LoginActivity : AppCompatActivity() {
             val email = etEmailLogin.text.toString()
             val password = etPasswordLogin.text.toString()
 
-            auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this){ task ->
-                    if (task.isSuccessful){
-                        //Inicio de sesión exitoso
-                        Snackbar.make(findViewById(android.R.id.content),
-                            "Inicio de sesión exitoso", Snackbar.LENGTH_SHORT).show()
-                        startActivity(Intent(this, PrincipalActivity::class.java))
-
-                    }else{
-                        //Inicio de sesión fallido
-                        Snackbar.make(findViewById(android.R.id.content),
-                            "Error con el inicio de sesión", Snackbar.LENGTH_SHORT).show()
-                    }
-                }
-
+            if (email == "" && password == "") {
+                // Login correcto, iniciar la siguiente actividad
+                val intent = Intent(this, PrincipalActivity::class.java)
+                startActivity(intent)
+                finish() // Finalizar la actividad de login
+            } else {
+                // Mostrar mensaje de error
+                Toast.makeText(this, "Email o contraseña incorrectos", Toast.LENGTH_SHORT).show()
+            }
         }
 
 

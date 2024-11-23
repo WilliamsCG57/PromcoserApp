@@ -16,7 +16,17 @@
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/nav_parte_diario"
-        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiarioFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.ParteDiarioFragment"
         android:label="PARTE DIARIO"
         tools:layout="@layout/fragment_parte_diario" />
+    <fragment
+        android:id="@+id/crearParteDiarioFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.CrearParteDiarioFragment"
+        android:label="CREAR DETALLE PARTE DIARIO"
+        tools:layout="@layout/fragment_crear_parte_diario" />
+    <fragment
+        android:id="@+id/creacionDetalleFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.CreacionDetalleFragment"
+        android:label="fragment_creacion_detalle"
+        tools:layout="@layout/fragment_creacion_detalle" />
 </navigation>
