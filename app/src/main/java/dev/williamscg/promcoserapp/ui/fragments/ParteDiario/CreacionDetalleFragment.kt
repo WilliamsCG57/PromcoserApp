@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,9 @@ import dev.williamscg.promcoserapp.model.CreacionDetalleModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.appcompat.app.AlertDialog
+import com.bumptech.glide.Glide
+
 
 class CreacionDetalleFragment : Fragment() {
 
@@ -35,9 +40,16 @@ class CreacionDetalleFragment : Fragment() {
         idParte = requireArguments().getString("idParte")
             ?: throw IllegalArgumentException("idParte es obligatorio")
 
-        adapter = CreacionDetalleAdapter(emptyList()) { detalle ->
-            deactivateDetail(detalle.idDetalleParteDiario)
-        }
+        adapter = CreacionDetalleAdapter(
+            lstCreacionDetalle = emptyList(),
+            onDeleteClick = { detalle ->
+                showPopPp(detalle)
+            },
+            onDetailClick = { detalle ->
+                // Acción al hacer clic en detalle
+                deactivateDetail(detalle.idDetalleParteDiario)
+            }
+        )
 
         recyclerView.adapter = adapter
         return view
@@ -47,6 +59,31 @@ class CreacionDetalleFragment : Fragment() {
         super.onResume()
         fetchDetailsFromApi()
     }
+
+    private fun showPopPp(detalle: CreacionDetalleModel) {
+        val builder = AlertDialog.Builder(requireContext())
+        val dialogView = layoutInflater.inflate(R.layout.popup_informativo_trabajo, null)
+
+        // Configurar la vista del popup
+        val ivImage = dialogView.findViewById<ImageView>(R.id.ivImage)
+        val tvTitle = dialogView.findViewById<TextView>(R.id.tvTitle)
+        val tvDescription = dialogView.findViewById<TextView>(R.id.tvDescription)
+
+        // Establecer los valores del popup
+        tvTitle.text = "Trabajo Efectuado"
+        tvDescription.text = detalle.trabajoEfectuado
+
+        // Cargar una imagen fija desde los recursos drawable
+        ivImage.setImageResource(R.drawable.promcos)
+
+        // Configurar el diálogo
+        builder.setView(dialogView)
+        builder.setPositiveButton("Cerrar") { dialog, _ -> dialog.dismiss() }
+        val dialog = builder.create()
+        dialog.show()
+    }
+
+
 
     private fun deactivateDetail(identificador: Int) {
         Toast.makeText(context, "Eliminando: $identificador", Toast.LENGTH_SHORT).show()
@@ -77,9 +114,16 @@ class CreacionDetalleFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     val lstCreacionDetalle = response.body() ?: emptyList()
-                    adapter = CreacionDetalleAdapter(lstCreacionDetalle) { detalle ->
-                        deactivateDetail(detalle.idDetalleParteDiario)
-                    }
+                    adapter = CreacionDetalleAdapter(
+                        lstCreacionDetalle = lstCreacionDetalle,
+                        onDetailClick = { detalle ->
+                            showPopPp(detalle)
+                        },
+                        onDeleteClick = { detalle ->
+                            // Acción al hacer clic en detalle
+                            deactivateDetail(detalle.idDetalleParteDiario)
+                        }
+                    )
                     recyclerView.adapter = adapter
                 } else {
                     Log.e("API_ERROR", "Error al obtener detalles: ${response.errorBody()?.string()}")
