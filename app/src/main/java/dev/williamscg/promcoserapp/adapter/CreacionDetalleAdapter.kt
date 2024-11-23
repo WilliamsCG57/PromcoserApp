@@ -10,15 +10,18 @@ import com.squareup.picasso.Picasso
 import dev.williamscg.promcoserapp.R
 import dev.williamscg.promcoserapp.model.CreacionDetalleModel
 
-class CreacionDetalleAdapter (private val lstCreacionDetalle: List<CreacionDetalleModel>) :
+class CreacionDetalleAdapter (
+    private val lstCreacionDetalle: List<CreacionDetalleModel>,
+    private val onEditarClick: (CreacionDetalleModel) -> Unit
+) :
     RecyclerView.Adapter<CreacionDetalleAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
     {
         val tvHoraInicio = itemView.findViewById<TextView>(R.id.tvHoraInicio)
         val tvHoraFin = itemView.findViewById<TextView>(R.id.tvHoraFin)
-        val tvTrabajo = itemView.findViewById<TextView>(R.id.tvTrabajo)
-        val tvDescripcion = itemView.findViewById<TextView>(R.id.tvDescripcion)
+        val icTrabajo = itemView.findViewById<ImageView>(R.id.icTrabajo)
+        val btnEditar = itemView.findViewById<TextView>(R.id.btnCDEditar)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,11 +35,13 @@ class CreacionDetalleAdapter (private val lstCreacionDetalle: List<CreacionDetal
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val itemCreacionDetalle = lstCreacionDetalle[position]
-        holder.tvHoraInicio.text = itemCreacionDetalle.HoraInicio
-        holder.tvHoraFin.text = itemCreacionDetalle.HoraFin
-        holder.tvTrabajo.text = itemCreacionDetalle.Trabajo
-        holder.tvDescripcion.text = itemCreacionDetalle.Descripcion
-
-
+        holder.tvHoraInicio.text = itemCreacionDetalle.horaInicio
+        holder.tvHoraFin.text = itemCreacionDetalle.horaFin
+        holder.btnEditar.setOnClickListener {
+            onEditarClick(itemCreacionDetalle)
+        }
+        holder.icTrabajo.setOnClickListener {
+            onEditarClick(itemCreacionDetalle)
+        }
     }
 }
