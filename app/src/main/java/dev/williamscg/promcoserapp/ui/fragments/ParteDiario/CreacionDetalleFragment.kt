@@ -19,7 +19,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import androidx.appcompat.app.AlertDialog
-import com.bumptech.glide.Glide
+import androidx.appcompat.app.AppCompatActivity
 
 
 class CreacionDetalleFragment : Fragment() {
@@ -60,11 +60,17 @@ class CreacionDetalleFragment : Fragment() {
         fetchDetailsFromApi()
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Establecer el título fijo de la Toolbar o ActionBar
+        (activity as? AppCompatActivity)?.supportActionBar?.title = "Detalle Parte Diario"
+    }
+
     private fun showPopPp(detalle: CreacionDetalleModel) {
         val builder = AlertDialog.Builder(requireContext())
         val dialogView = layoutInflater.inflate(R.layout.popup_informativo_trabajo, null)
 
-        // Configurar la vista del popup
         val ivImage = dialogView.findViewById<ImageView>(R.id.ivImage)
         val tvTitle = dialogView.findViewById<TextView>(R.id.tvTitle)
         val tvDescription = dialogView.findViewById<TextView>(R.id.tvDescription)
@@ -88,7 +94,7 @@ class CreacionDetalleFragment : Fragment() {
     private fun deactivateDetail(identificador: Int) {
         Toast.makeText(context, "Eliminando: $identificador", Toast.LENGTH_SHORT).show()
 
-        val apiService = ApiClient.instance
+        val apiService = ApiClient.getDetalleParteApiService(requireContext())
         apiService.deactivateDetail(identificador).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
@@ -106,7 +112,7 @@ class CreacionDetalleFragment : Fragment() {
 
 
     private fun fetchDetailsFromApi() {
-        val apiService = ApiClient.instance
+        val apiService = ApiClient.getDetalleParteApiService(requireContext())
         apiService.getAllActiveDetails(idParte.toInt()).enqueue(object : Callback<List<CreacionDetalleModel>> {
             override fun onResponse(
                 call: Call<List<CreacionDetalleModel>>,
@@ -120,7 +126,6 @@ class CreacionDetalleFragment : Fragment() {
                             showPopPp(detalle)
                         },
                         onDeleteClick = { detalle ->
-                            // Acción al hacer clic en detalle
                             deactivateDetail(detalle.idDetalleParteDiario)
                         }
                     )
