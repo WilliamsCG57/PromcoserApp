@@ -58,12 +58,12 @@
         android:id="@+id/icTrabajo"
         android:layout_width="27dp"
         android:layout_height="29dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="36dp"
         android:contentDescription="@string/detalle_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCDEditar"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_more" />
+        app:srcCompat="@drawable/detalle" />
 
     <Button
         android:id="@+id/btnCDEditar"

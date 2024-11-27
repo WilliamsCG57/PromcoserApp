@@ -79,12 +79,12 @@
         app:layout_constraintTop_toBottomOf="@id/tv1" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCerrar"
         android:layout_width="270dp"
         android:layout_height="41dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="#BA0909"
-        android:text="@string/cerrrar"
+        android:text="Agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

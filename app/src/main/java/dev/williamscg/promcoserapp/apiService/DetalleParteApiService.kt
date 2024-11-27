@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.PUT
 import retrofit2.http.Path
 
-interface DetalleParteApiService {
+public interface DetalleParteApiService {
     @GET("api/DetalleParteDiario/GetAllActive/{idParteDiario}")
     fun getAllActiveDetails(
         @Path("idParteDiario") idParteDiario: Int
