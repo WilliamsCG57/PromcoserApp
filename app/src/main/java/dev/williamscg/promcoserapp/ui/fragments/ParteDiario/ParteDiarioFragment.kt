@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dev.williamscg.promcoserapp.R
@@ -29,15 +31,17 @@ class ParteDiarioFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_parte_diario, container, false)
         recyclerView = view.findViewById(R.id.rvParteDiarioTarjeta)
-
+        val boton = view.findViewById<Button>(R.id.btnCrearDetalle)
         // Obtener el userId desde SharedPreferences
         val userId = obtenerUserIdDesdePreferencias()
 
+        boton.setOnClickListener {
+            createParteDiario()
+        }
         // Llamar a la API con el userId
         lifecycleScope.launch {
             if (userId == -1) {
                 Toast.makeText(requireContext(), "Usuario no autenticado", Toast.LENGTH_SHORT).show()
-                // Redirigir a la pantalla de inicio de sesión si es necesario
                 return@launch
             }
 
@@ -78,5 +82,8 @@ class ParteDiarioFragment : Fragment() {
             putInt("idParteDiario", parteDiario.idParteDiario)
         }
         //findNavController().navigate(R.id.creacionDetalleFragment, bundle)
+    }
+    private fun createParteDiario(){
+        findNavController().navigate(R.id.crearParteDiarioFragment, )
     }
 }
