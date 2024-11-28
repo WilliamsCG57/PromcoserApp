@@ -8,44 +8,70 @@
     tools:context=".ui.fragments.ParteDiario.CrearParteDiarioFragment" >
 
     <Spinner
-        android:id="@+id/spMaquina"
+        android:id="@+id/spCliente"
         android:layout_width="350dp"
         android:layout_height="48dp"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spLugar"
+        android:id="@+id/spMaquinaria"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spTrabajo" />
+        app:layout_constraintTop_toBottomOf="@+id/spLugarTrabajo" />
 
     <Spinner
-        android:id="@+id/spTrabajo"
+        android:id="@+id/spLugarTrabajo"
         android:layout_width="350dp"
         android:layout_height="48dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spMaquina" />
+        app:layout_constraintTop_toBottomOf="@+id/spCliente" />
 
     <Button
         android:id="@+id/btnConfDetalle"
         android:layout_width="287dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="64dp"
         android:backgroundTint="#BA0909"
         android:text="@string/confirDetal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/hideHoraInicio"
+        android:inputType="text"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.637" />
+
+    <TextView
+        android:id="@+id/tvhoraInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/valtvHoraInicio"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="430dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

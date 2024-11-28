@@ -41,6 +41,8 @@
     <string name="elim">Eliminar</string>
     <string name="cerrrar">Cerrar</string>
     <string name="detalle_icon">iconTrabajo</string>
+    <string name="valtvHoraInicio">Hora Inicio</string>
+    <string name="hideHoraInicio">Ingrese Hor. Inicio</string>
 
 
 </resources>
