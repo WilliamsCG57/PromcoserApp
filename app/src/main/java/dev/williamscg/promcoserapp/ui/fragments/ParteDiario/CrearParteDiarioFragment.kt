@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.Spinner
 import dev.williamscg.promcoserapp.R
 
@@ -22,9 +21,9 @@ class CrearParteDiarioFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_crear_parte_diario, container, false)
 
         // Declarar y configurar los Spinners
-        val spTrabajo: Spinner = view.findViewById(R.id.spTrabajo)
-        val spLugar: Spinner = view.findViewById(R.id.spLugar)
-        val spMaquina: Spinner = view.findViewById(R.id.spMaquina)
+        val spTrabajo: Spinner = view.findViewById(R.id.spLugarTrabajo)
+        val spLugar: Spinner = view.findViewById(R.id.spMaquinaria)
+        val spMaquina: Spinner = view.findViewById(R.id.spCliente)
 
         // Configurar adaptadores para cada Spinner
         try {
