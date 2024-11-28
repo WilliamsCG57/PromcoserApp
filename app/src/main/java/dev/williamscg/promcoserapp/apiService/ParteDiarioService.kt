@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface ParteDiarioService {
-    @GET("api/ParteDiario/GetAllActive/{userId}")
+    @GET("api/ParteDiario/GetAllActivePending/{userId}")
     suspend fun getParteDiario(@Path("userId") userId: Int): List<TarjetaParteDiarioModel>
 }

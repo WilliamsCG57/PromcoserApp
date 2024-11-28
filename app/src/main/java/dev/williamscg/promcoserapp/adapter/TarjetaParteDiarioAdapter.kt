@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import dev.williamscg.promcoserapp.R
 import dev.williamscg.promcoserapp.model.TarjetaParteDiarioModel
@@ -19,7 +20,6 @@ class TarjetaParteDiarioAdapter(
         private val tvPlate: TextView = itemView.findViewById(R.id.txtPlate)
         private val tvDestiny: TextView = itemView.findViewById(R.id.txtDestiny)
         private val tvReason: TextView = itemView.findViewById(R.id.txtReason)
-        private val tvSerie: TextView = itemView.findViewById(R.id.txtSerie)
         private val tvDate: TextView = itemView.findViewById(R.id.txtDate)
         private val tvStartTime: TextView = itemView.findViewById(R.id.txtStartTime)
         private val tvEndTime: TextView = itemView.findViewById(R.id.txtEndTime)
@@ -34,18 +34,27 @@ class TarjetaParteDiarioAdapter(
             tvPlate.text = item.placa
             tvDestiny.text = item.descripcion
             tvReason.text = item.razonSocial
-            tvSerie.text = item.serie
             tvDate.text = item.fecha
             tvStartTime.text = item.horometroInicio.toString()
             tvEndTime.text = item.horometroFinal.toString()
             tvPetCount.text = item.cantidadPetroleo.toString()
             tvOilAmount.text = item.cantidadAceite.toString()
 
-            itemView.findViewById<Button>(R.id.btnFin).setOnClickListener {
-                onFinishClick(item)
+            val btnFin = itemView.findViewById<Button>(R.id.btnFin)
+            val btnDetalles = itemView.findViewById<Button>(R.id.btnDetalles)
+            val context = itemView.context
+
+            if (item.finalizado) {
+                btnFin.visibility = View.GONE
+            } else {
+                btnFin.visibility = View.VISIBLE
+                btnFin.isEnabled = true
+                btnFin.setOnClickListener {
+                    onFinishClick(item)
+                }
             }
 
-            itemView.findViewById<Button>(R.id.btnDetalles).setOnClickListener {
+            btnDetalles.setOnClickListener {
                 onDetailsClick(item)
             }
         }

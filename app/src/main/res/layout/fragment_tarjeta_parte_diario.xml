@@ -86,26 +86,6 @@
                 app:layout_constraintTop_toBottomOf="@id/txtDestiny" />
 
             <TextView
-                android:id="@+id/lblSerie"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@string/serieSTR"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/txtSerie"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtReason" />
-
-            <TextView
-                android:id="@+id/txtSerie"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lblSerie"
-                app:layout_constraintTop_toBottomOf="@id/txtReason" />
-
-            <TextView
                 android:id="@+id/lblDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -114,7 +94,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/txtDate"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtSerie" />
+                app:layout_constraintTop_toBottomOf="@+id/txtReason" />
 
             <TextView
                 android:id="@+id/txtDate"
@@ -123,7 +103,7 @@
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lblDate"
-                app:layout_constraintTop_toBottomOf="@id/txtSerie" />
+                app:layout_constraintTop_toBottomOf="@+id/txtReason" />
 
             <TextView
                 android:id="@+id/lblStartTime"

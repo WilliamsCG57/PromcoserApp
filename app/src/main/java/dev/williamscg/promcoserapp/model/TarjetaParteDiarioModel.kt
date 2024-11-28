@@ -6,7 +6,7 @@ data class TarjetaParteDiarioModel(
     val personal: String,
     val descripcion: String,
     val razonSocial: String,
-    val serie: String,
+    val finalizado: Boolean,
     val firmas: String,
     val fecha: String,
     val horometroInicio: Double,
