@@ -32,7 +32,7 @@ class AuthInterceptor(private val context: Context) : Interceptor {
 }
 
 object ApiClient {
-    private const val BASE_URL = "https://aca5-38-25-111-46.ngrok-free.app/"
+    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
 
     private fun getOkHttpClient(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
@@ -51,7 +51,7 @@ object ApiClient {
 }
 
 object ApiClientLogIn {
-    private const val BASE_URL = "https://aca5-38-25-111-46.ngrok-free.app/"
+    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
 
     val instance: LogInApiService by lazy {
         Retrofit.Builder()
@@ -59,5 +59,20 @@ object ApiClientLogIn {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(LogInApiService::class.java)
+    }
+}
+
+object RetrofitInstance {
+    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+
+    private val retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    val api: ParteDiarioService by lazy {
+        retrofit.create(ParteDiarioService::class.java)
     }
 }

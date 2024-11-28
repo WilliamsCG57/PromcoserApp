@@ -54,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
         logInService.signIn(user).enqueue(object : Callback<PromcoserUser> {
             override fun onResponse(call: Call<PromcoserUser>, response: Response<PromcoserUser>) {
                 if (response.isSuccessful) {
+                    val idPersonal = response.body()?.idPersonal ?: 0
                     val usuario = response.body()?.usuario ?: ""
                     val token = response.body()?.token ?: ""
                     val nombre = response.body()?.nombre ?: ""
@@ -61,6 +62,7 @@ class LoginActivity : AppCompatActivity() {
                     val correo = response.body()?.correoElectronico ?: ""
 
                     val userInfo = PromcoserUser(
+                        idPersonal = idPersonal,
                         nombre = nombre,
                         apellido = apellido,
                         correoElectronico = correo,
@@ -87,6 +89,7 @@ class LoginActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("userPrefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
 
+        editor.putInt("userId", user.idPersonal)
         editor.putString("userToken", user.token)
         editor.putString("userName", user.nombre)
         editor.putString("userApellido", user.apellido)

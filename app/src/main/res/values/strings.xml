@@ -41,6 +41,25 @@
     <string name="elim">Eliminar</string>
     <string name="cerrrar">Cerrar</string>
     <string name="detalle_icon">iconTrabajo</string>
+    <string name="strPlaca" />
+    <string name="PlacaSTR">Placa</string>
+    <string name="descpStr" />
+    <string name="despSTR">Descripción</string>
+    <string name="razonstr">Razón Social</string>
+    <string name="serieSTR">Serie</string>
+    <string name="FechaSTR">Fecha</string>
+    <string name="StrHoromInicial">Horometro Inicial</string>
+    <string name="HoroStrFin">Horometro Final</string>
+    <string name="CantPetStr">Cantidad de Petroleo</string>
+    <string name="cantAceiteStr">Cantidad de Aceite</string>
+    <string name="strBtnF">Finalizar</string>
+    <string name="strBtnDetalles">Más Detalles</string>
+    <string name="plate_hint">Ingrese Placa</string>
+    <string name="lblDestiny">Ingrese Descripcion</string>
+    <string name="reason_hint">Ingrese RA</string>
+    <string name="destiny_hint">Descripcion</string>
+    <string name="IngreseSTR">Ingrese</string>
+    <string name="Ingresestr">Ingrese</string>
 
 
 </resources>

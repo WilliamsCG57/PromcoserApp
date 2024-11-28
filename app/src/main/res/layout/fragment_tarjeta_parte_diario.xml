@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    tools:context=".adapter.TarjetaParteDiarioAdapter">
+
+    <!-- CardView para fondo redondeado gris -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/material_dynamic_neutral90"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Contenido dentro del CardView -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/lblPlate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/PlacaSTR"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtPlate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtPlate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblPlate"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblDestiny"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/despSTR"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtDestiny"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPlate" />
+
+            <TextView
+                android:id="@+id/txtDestiny"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblDestiny"
+                app:layout_constraintTop_toBottomOf="@id/txtPlate" />
+
+            <TextView
+                android:id="@+id/lblReason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/razonstr"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtReason"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDestiny" />
+
+            <TextView
+                android:id="@+id/txtReason"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblReason"
+                app:layout_constraintTop_toBottomOf="@id/txtDestiny" />
+
+            <TextView
+                android:id="@+id/lblSerie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/serieSTR"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtSerie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtReason" />
+
+            <TextView
+                android:id="@+id/txtSerie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblSerie"
+                app:layout_constraintTop_toBottomOf="@id/txtReason" />
+
+            <TextView
+                android:id="@+id/lblDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/FechaSTR"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtSerie" />
+
+            <TextView
+                android:id="@+id/txtDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblDate"
+                app:layout_constraintTop_toBottomOf="@id/txtSerie" />
+
+            <TextView
+                android:id="@+id/lblStartTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/StrHoromInicial"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtStartTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtDate" />
+
+            <TextView
+                android:id="@+id/txtStartTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblStartTime"
+                app:layout_constraintTop_toBottomOf="@id/txtDate" />
+
+            <TextView
+                android:id="@+id/lblEndTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/HoroStrFin"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtEndTime"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtStartTime" />
+
+            <TextView
+                android:id="@+id/txtEndTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblEndTime"
+                app:layout_constraintTop_toBottomOf="@id/txtStartTime" />
+
+            <TextView
+                android:id="@+id/lblPetCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/CantPetStr"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtPetCount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtEndTime" />
+
+            <TextView
+                android:id="@+id/txtPetCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblPetCount"
+                app:layout_constraintTop_toBottomOf="@id/txtEndTime" />
+
+            <TextView
+                android:id="@+id/lblOilAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cantAceiteStr"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtOilAmount"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPetCount" />
+
+            <TextView
+                android:id="@+id/txtOilAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblOilAmount"
+                app:layout_constraintTop_toBottomOf="@id/txtPetCount" />
+
+            <Button
+                android:id="@+id/btnFin"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:backgroundTint="@color/design_default_color_error"
+                android:text="@string/strBtnF"
+                android:textColor="#F8BBD0"
+                app:layout_constraintEnd_toStartOf="@+id/btnDetalles"
+                app:layout_constraintHorizontal_bias="0.363"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblOilAmount" />
+
+            <Button
+                android:id="@+id/btnDetalles"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="56dp"
+                android:backgroundTint="@color/white"
+                android:text="@string/strBtnDetalles"
+                android:textColor="@color/design_default_color_error"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtOilAmount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
