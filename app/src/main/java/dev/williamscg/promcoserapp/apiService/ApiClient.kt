@@ -33,7 +33,7 @@ class AuthInterceptor(private val context: Context) : Interceptor {
 }
 
 object ApiClient {
-    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://e527-38-25-122-10.ngrok-free.app/"
 
     private fun getOkHttpClient(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
@@ -86,10 +86,19 @@ object ApiClient {
             .create(ParteDiarioService::class.java)
     }
 
+    fun getChangePassword(context: Context): CambiarContrasenaApiService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getOkHttpClient(context))
+            .build()
+            .create(CambiarContrasenaApiService::class.java)
+    }
+
 }
 
 object ApiClientLogIn {
-    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://e527-38-25-122-10.ngrok-free.app/"
 
     val instance: LogInApiService by lazy {
         Retrofit.Builder()
@@ -101,7 +110,7 @@ object ApiClientLogIn {
 }
 // API Client
 object ApiClientChangePassword {
-    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://e527-38-25-122-10.ngrok-free.app/"
 
     val instance: CambiarContrasenaApiService by lazy {
         Retrofit.Builder()
@@ -112,7 +121,7 @@ object ApiClientChangePassword {
     }
 }
 object RetrofitInstance {
-    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://e527-38-25-122-10.ngrok-free.app/"
 
     private val retrofit by lazy {
         Retrofit.Builder()

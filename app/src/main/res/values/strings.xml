@@ -26,7 +26,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="menu_maquinaria">Maquinaria</string>
     <string name="menu_parte">Parte Diario</string>
-    <string name="menu_register">Registro</string>
     <string name="menu_password">Cambio de Contraseña</string>
     <string name="splastext">BIENVENIDO A LA APP DE \nOPERACIONES DE PROMCOSER</string>
     <string name="crearDetalle">Crear</string>

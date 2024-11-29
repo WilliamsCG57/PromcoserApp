@@ -10,11 +10,6 @@
         android:label="MAQUINARIAS"
         tools:layout="@layout/fragment_maquinaria" />
     <fragment
-        android:id="@+id/nav_register"
-        android:name="dev.williamscg.promcoserapp.ui.fragments.RegisterFragment"
-        android:label="REGISTRO"
-        tools:layout="@layout/fragment_register" />
-    <fragment
         android:id="@+id/nav_parte_diario"
         android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.ParteDiarioFragment"
         android:label="PARTE DIARIO"
@@ -30,8 +25,18 @@
         android:label="fragment_creacion_detalle"
         tools:layout="@layout/fragment_creacion_detalle" />
     <fragment
-        android:id="@+id/cambioContrasenaFragment"
+        android:id="@+id/nav_cambio_contrasena"
         android:name="dev.williamscg.promcoserapp.ui.fragments.CambioContrasenaFragment"
-        android:label="fragment_cambio_contrasena"
+        android:label="CAMBIAR CONTRASEÑA"
         tools:layout="@layout/fragment_cambio_contrasena" />
+    <fragment
+        android:id="@+id/agregarDetalleFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.AgregarDetalleFragment"
+        android:label="AGREGAR DETALLE"
+        tools:layout="@layout/fragment_agregar_detalle" />
+    <fragment
+        android:id="@+id/confirmarParteFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.ConfirmarParteFragment"
+        android:label="CONFIRMAR PARTE"
+        tools:layout="@layout/fragment_confirmar_parte" />
 </navigation>
