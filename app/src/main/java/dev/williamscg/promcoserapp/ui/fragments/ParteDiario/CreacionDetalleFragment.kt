@@ -1,5 +1,6 @@
 package dev.williamscg.promcoserapp.ui.fragments.ParteDiario
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -24,10 +25,9 @@ import androidx.appcompat.app.AppCompatActivity
 
 class CreacionDetalleFragment : Fragment() {
 
-    private lateinit var idParte: String
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CreacionDetalleAdapter
-
+    private var idParte: Int = -1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,8 +37,8 @@ class CreacionDetalleFragment : Fragment() {
         recyclerView = view.findViewById<RecyclerView>(R.id.rvCreacionDetalle)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        idParte = requireArguments().getString("idParte")
-            ?: throw IllegalArgumentException("idParte es obligatorio")
+        val sharedPreferences = requireContext().getSharedPreferences("MiAppPreferences", Context.MODE_PRIVATE)
+        idParte = sharedPreferences.getInt("SELECTED_PARTE_DIARIO_ID", -1)
 
         adapter = CreacionDetalleAdapter(
             lstCreacionDetalle = emptyList(),
@@ -113,7 +113,7 @@ class CreacionDetalleFragment : Fragment() {
 
     private fun fetchDetailsFromApi() {
         val apiService = ApiClient.getDetalleParteApiService(requireContext())
-        apiService.getAllActiveDetails(idParte.toInt()).enqueue(object : Callback<List<CreacionDetalleModel>> {
+        apiService.getAllActiveDetails(idParte).enqueue(object : Callback<List<CreacionDetalleModel>> {
             override fun onResponse(
                 call: Call<List<CreacionDetalleModel>>,
                 response: Response<List<CreacionDetalleModel>>

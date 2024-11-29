@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
 import dev.williamscg.promcoserapp.R
-import dev.williamscg.promcoserapp.adapter.MaquinariaAdapter
 import dev.williamscg.promcoserapp.model.MaquinariaModel
 
 class MaquinariaFragment : Fragment() {
@@ -25,23 +24,7 @@ class MaquinariaFragment : Fragment() {
         val rvMaquinaria = view.findViewById<RecyclerView>(R.id.rvMaquinaria)
         var lstMaquinaria: List<MaquinariaModel>
 
-        db.collection("maquinarias")
-            .addSnapshotListener { value, error ->
-                if (error != null) {
-                    Log.e("Firestore Error", error.message.toString())
-                    return@addSnapshotListener
-                }
-                lstMaquinaria = value!!.documents.map { document ->
-                    MaquinariaModel(
-                        document["placa"].toString(),
-                        document["modelo"].toString(),
-                        document["tipo"].toString(),
-                        document["imageUrl"].toString()
-                    )
-                }
-                rvMaquinaria.adapter = MaquinariaAdapter(lstMaquinaria)
-                rvMaquinaria.layoutManager = LinearLayoutManager(requireContext())
-            }
+
         return view
     }
 }

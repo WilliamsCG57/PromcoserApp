@@ -48,6 +48,43 @@ object ApiClient {
             .build()
             .create(DetalleParteApiService::class.java)
     }
+
+    fun getMaquinariaApiService(context: Context): MaquinariaApiService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getOkHttpClient(context))
+            .build()
+            .create(MaquinariaApiService::class.java)
+    }
+
+    fun getClienteApiService(context: Context): ClienteApiService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getOkHttpClient(context))
+            .build()
+            .create(ClienteApiService::class.java)
+    }
+
+    fun getLugarApiService(context: Context): LugarTrabajoApiService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getOkHttpClient(context))
+            .build()
+            .create(LugarTrabajoApiService::class.java)
+    }
+
+    fun getParteDiarioApiService(context: Context): ParteDiarioService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getOkHttpClient(context))
+            .build()
+            .create(ParteDiarioService::class.java)
+    }
+
 }
 
 object ApiClientLogIn {
