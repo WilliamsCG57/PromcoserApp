@@ -1,5 +1,6 @@
 package dev.williamscg.promcoserapp.ui.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import dev.williamscg.promcoserapp.R
+import dev.williamscg.promcoserapp.apiService.ApiClient
 import dev.williamscg.promcoserapp.apiService.ApiClientChangePassword
 import dev.williamscg.promcoserapp.model.CambioContrasenaModel
 
@@ -34,6 +36,8 @@ class CambioContrasenaFragment : Fragment() {
         val etNewPassword = view.findViewById<EditText>(R.id.etNewPassword)
         val etRepeatNewPassword = view.findViewById<EditText>(R.id.etRepeatNewPassword)
         val btnCambiarContrasena = view.findViewById<Button>(R.id.btnCambiarContrasena)
+        val sharedPreferences = requireActivity().getSharedPreferences("userPrefs", Context.MODE_PRIVATE)
+        val username = sharedPreferences.getString("userUsuario", "") ?: ""
 
         btnCambiarContrasena.setOnClickListener {
             val currentPassword = etActualPassword.text.toString()
@@ -41,23 +45,14 @@ class CambioContrasenaFragment : Fragment() {
             val repeatNewPassword = etRepeatNewPassword.text.toString()
 
             if (validateInputs(currentPassword, newPassword, repeatNewPassword)) {
-                lifecycleScope.launch {
-                    val response = ApiClientChangePassword.instance.changePassword(
-                        CambioContrasenaModel(
-                            usuario = "admin", // Replace with actual user
-                            contrasena = currentPassword,
-                            newContrasena = newPassword
-                        )
-                    )
-
-                    if (response.isSuccessful) {
-                        Toast.makeText(context, "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show()
-                        // Navigate back or clear fields
-                    } else {
-                        Toast.makeText(context, "Error al cambiar la contraseña", Toast.LENGTH_SHORT).show()
-                    }
-                }
+                val requestBody = CambioContrasenaModel(
+                    usuario = username,
+                    contrasena = currentPassword,
+                    newContrasena = newPassword
+                )
+                changePassword(requestBody)
             }
+            limpiarCampos(etActualPassword, etNewPassword, etRepeatNewPassword)
         }
     }
 
@@ -72,5 +67,27 @@ class CambioContrasenaFragment : Fragment() {
         }
         return true
     }
+
+    private fun changePassword(userChange: CambioContrasenaModel){
+        val apiService = ApiClient.getChangePassword(requireContext())
+        lifecycleScope.launch {
+            try {
+                val response = apiService.changePassword(userChange)
+                if (response.isSuccessful && response.body() != null) {
+                    Toast.makeText(requireContext(), "Contraseña cambiada exitosamente", Toast.LENGTH_LONG).show()
+                } else {
+                    Toast.makeText(requireContext(), "Error al cambiar la contraseña: ${response.errorBody()?.string()}", Toast.LENGTH_LONG).show()
+                }
+            } catch (e: Exception) {
+
+            }
+        }
+    }
+    private fun limpiarCampos(vararg editTexts: EditText) {
+        for (editText in editTexts) {
+            editText.text.clear()
+        }
+    }
+
 }
 

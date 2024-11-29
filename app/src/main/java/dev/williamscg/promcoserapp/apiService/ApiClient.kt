@@ -86,6 +86,15 @@ object ApiClient {
             .create(ParteDiarioService::class.java)
     }
 
+    fun getChangePassword(context: Context): CambiarContrasenaApiService {
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(getOkHttpClient(context))
+            .build()
+            .create(CambiarContrasenaApiService::class.java)
+    }
+
 }
 
 object ApiClientLogIn {
