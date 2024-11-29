@@ -56,7 +56,7 @@ class ParteDiarioFragment : Fragment() {
                     onFinishClick = { parteDiario ->
                         // Guardar el ID en SharedPreferences antes de mostrar el modal
                         saveSelectedParteDiarioId(parteDiario.idParteDiario)
-                        showFinishModal(parteDiario)
+                        navigateToConfirm(parteDiario)
                     },
                     onDetailsClick = { parteDiario ->
                         // Guardar el ID en SharedPreferences antes de navegar a detalles
@@ -80,8 +80,8 @@ class ParteDiarioFragment : Fragment() {
         return sharedPreferences.getInt("userId", -1) // Devuelve -1 si no encuentra el valor
     }
 
-    private fun showFinishModal(parteDiario: TarjetaParteDiarioModel) {
-        // Implementar lógica de modal de finalización
+    private fun navigateToConfirm(parteDiario: TarjetaParteDiarioModel) {
+        findNavController().navigate(R.id.confirmarParteFragment)
     }
 
     private fun navigateToDetails(parteDiario: TarjetaParteDiarioModel) {
@@ -92,7 +92,6 @@ class ParteDiarioFragment : Fragment() {
     }
     private fun saveSelectedParteDiarioId(idParteDiario: Int) {
         sharedPreferences.edit().putInt("SELECTED_PARTE_DIARIO_ID", idParteDiario).apply()
-        Toast.makeText(requireContext(), "Guardado ID: $idParteDiario", Toast.LENGTH_SHORT).show()
     }
 
 }
