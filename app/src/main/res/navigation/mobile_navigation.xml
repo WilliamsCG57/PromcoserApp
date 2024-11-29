@@ -22,11 +22,21 @@
     <fragment
         android:id="@+id/crearParteDiarioFragment"
         android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.CrearParteDiarioFragment"
-        android:label="CREAR DETALLE PARTE DIARIO"
+        android:label="CREAR PARTE DIARIO"
         tools:layout="@layout/fragment_crear_parte_diario" />
     <fragment
         android:id="@+id/creacionDetalleFragment"
         android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.CreacionDetalleFragment"
-        android:label="fragment_creacion_detalle"
+        android:label="DETALLE PARTE DIARIO"
         tools:layout="@layout/fragment_creacion_detalle" />
+    <fragment
+        android:id="@+id/confirmarParteFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.ConfirmarParteFragment"
+        android:label="CONFIRMAR PARTE DIARIO"
+        tools:layout="@layout/fragment_confirmar_parte" />
+    <fragment
+        android:id="@+id/agregarDetalleFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.AgregarDetalleFragment"
+        android:label="AGREGAR DETALLE"
+        tools:layout="@layout/fragment_agregar_detalle" />
 </navigation>
