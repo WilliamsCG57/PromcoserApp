@@ -60,6 +60,10 @@
     <string name="destiny_hint">Descripcion</string>
     <string name="IngreseSTR">Ingrese</string>
     <string name="Ingresestr">Ingrese</string>
+    <string name="valtvHoraInicio">Horometro Inicio</string>
+    <string name="hideHoraInicio">Ingrese Hor. Inicio</string>
+    <string name="valetHorometro">Hrs</string>
+
 
 
 </resources>

@@ -85,10 +85,7 @@ class ParteDiarioFragment : Fragment() {
     }
 
     private fun navigateToDetails(parteDiario: TarjetaParteDiarioModel) {
-        val bundle = Bundle().apply {
-            putInt("idParteDiario", parteDiario.idParteDiario)
-        }
-        //findNavController().navigate(R.id.creacionDetalleFragment, bundle)
+        findNavController().navigate(R.id.creacionDetalleFragment)
     }
     private fun createParteDiario(){
         findNavController().navigate(R.id.crearParteDiarioFragment, )
