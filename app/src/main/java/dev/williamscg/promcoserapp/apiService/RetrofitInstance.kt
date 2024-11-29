@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object RetrofitInstance {
 
     private val TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImlhdCI6MTczMTE2Mjg3OSwiZXhwIjoxNzMxMjQ5Mjc5fQ.HGTZhk0y0ZMKFOhs4DIJs8p8FU7Pr1nFphp-rDTqzVE"
-    private const val BASE_URL = "https://aca5-38-25-111-46.ngrok-free.app/api/"
+    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/api/"
 
     private val client = OkHttpClient
         .Builder()

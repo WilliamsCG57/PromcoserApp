@@ -28,7 +28,7 @@ class ParteDiarioFragment : Fragment() {
 
 
         boton.setOnClickListener {
-            findNavController().navigate(R.id.crearParteDiarioFragment)
+            findNavController().navigate(R.id.creacionParteDiarioFragment)
         }
 
         return view

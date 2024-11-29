@@ -1,11 +1,16 @@
-package dev.williamscg.promcoserapp
+package dev.williamscg.promcoserapp.ui.fragments.ParteDiario
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import dev.williamscg.promcoserapp.R
 import dev.williamscg.promcoserapp.apiService.ClienteApiService
 import dev.williamscg.promcoserapp.apiService.LugarTrabajoApiService
 import dev.williamscg.promcoserapp.apiService.MaquinariaApiService
@@ -17,19 +22,24 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CrearParteDiarioFragment : Fragment() {
-
+class CreacionParteDiarioFragment : Fragment() {
     private lateinit var spinnerClientes: Spinner
     private lateinit var spinnerLugares: Spinner
     private lateinit var spinnerMaquinarias: Spinner
     private lateinit var plainTextHorometro: EditText
     private lateinit var btnConfirmar: Button
 
+    private lateinit var idParte: String  // Asegúrate de tener este campo si necesitas acceder a `idParte`
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_crear_parte_diario, container, false)
+        val view = inflater.inflate(R.layout.fragment_creacion_parte_diario, container, false)
+
+        // Obtener los argumentos
+        val arguments = arguments
+        idParte = arguments?.getString("idParte") ?: throw IllegalArgumentException("idParte es obligatorio")
 
         // Inicializar vistas
         spinnerClientes = view.findViewById(R.id.spCliente)

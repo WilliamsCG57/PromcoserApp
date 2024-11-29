@@ -23,23 +23,24 @@ class CreacionDetalleFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CreacionDetalleAdapter
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view: View = inflater.inflate(R.layout.fragment_creacion_detalle, container, false)
-        recyclerView = view.findViewById<RecyclerView>(R.id.rvCreacionDetalle)
+        recyclerView = view.findViewById(R.id.rvCreacionDetalle)
         recyclerView.layoutManager = LinearLayoutManager(context)
 
-        idParte = requireArguments().getString("idParte")
-            ?: throw IllegalArgumentException("idParte es obligatorio")
+        // Acceder a los argumentos de manera segura
+        val arguments = arguments
+        idParte = arguments?.getString("idParte") ?: throw IllegalArgumentException("idParte es obligatorio")
 
+        // Configurar el adapter
         adapter = CreacionDetalleAdapter(emptyList()) { detalle ->
             deactivateDetail(detalle.idDetalleParteDiario)
         }
-
         recyclerView.adapter = adapter
+
         return view
     }
 
@@ -67,7 +68,6 @@ class CreacionDetalleFragment : Fragment() {
         })
     }
 
-
     private fun fetchDetailsFromApi() {
         val apiService = ApiClient.instance
         apiService.getAllActiveDetails(idParte.toInt()).enqueue(object : Callback<List<CreacionDetalleModel>> {
@@ -91,5 +91,4 @@ class CreacionDetalleFragment : Fragment() {
             }
         })
     }
-
 }
