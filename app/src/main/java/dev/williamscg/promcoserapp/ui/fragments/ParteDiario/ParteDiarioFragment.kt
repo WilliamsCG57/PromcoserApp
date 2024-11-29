@@ -40,7 +40,7 @@ class ParteDiarioFragment : Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("MiAppPreferences", Context.MODE_PRIVATE)
 
         boton.setOnClickListener {
-            findNavController().navigate(R.id.crearParteDiarioFragment)
+            navigateToCreateParteDiario()
         }
 
         lifecycleScope.launch {
@@ -87,7 +87,7 @@ class ParteDiarioFragment : Fragment() {
     private fun navigateToDetails(parteDiario: TarjetaParteDiarioModel) {
         findNavController().navigate(R.id.creacionDetalleFragment)
     }
-    private fun createParteDiario(){
+    private fun navigateToCreateParteDiario(){
         findNavController().navigate(R.id.crearParteDiarioFragment, )
     }
     private fun saveSelectedParteDiarioId(idParteDiario: Int) {

@@ -42,23 +42,19 @@ class CambioContrasenaFragment : Fragment() {
 
             if (validateInputs(currentPassword, newPassword, repeatNewPassword)) {
                 lifecycleScope.launch {
-                    try {
-                        val response = ApiClientChangePassword.instance.changePassword(
-                            CambioContrasenaModel(
-                                usuario = "admin", // Replace with actual user
-                                contrasena = currentPassword,
-                                newContrasena = newPassword
-                            )
+                    val response = ApiClientChangePassword.instance.changePassword(
+                        CambioContrasenaModel(
+                            usuario = "admin", // Replace with actual user
+                            contrasena = currentPassword,
+                            newContrasena = newPassword
                         )
+                    )
 
-                        if (response.isSuccessful) {
-                            Toast.makeText(context, "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show()
-                            // Navigate back or clear fields
-                        } else {
-                            Toast.makeText(context, "Error al cambiar la contraseña", Toast.LENGTH_SHORT).show()
-                        }
-                    } catch (e: Exception) {
-                        Toast.makeText(context, "Error de conexión", Toast.LENGTH_SHORT).show()
+                    if (response.isSuccessful) {
+                        Toast.makeText(context, "Contraseña cambiada exitosamente", Toast.LENGTH_SHORT).show()
+                        // Navigate back or clear fields
+                    } else {
+                        Toast.makeText(context, "Error al cambiar la contraseña", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

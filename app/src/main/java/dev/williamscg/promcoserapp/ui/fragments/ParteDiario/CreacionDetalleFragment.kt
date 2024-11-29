@@ -101,13 +101,10 @@ class CreacionDetalleFragment : Fragment() {
 
 
     private fun deactivateDetail(identificador: Int) {
-        Toast.makeText(context, "Eliminando: $identificador", Toast.LENGTH_SHORT).show()
-
-        val apiService = ApiClient.getDetalleParteApiService(requireContext())
+                val apiService = ApiClient.getDetalleParteApiService(requireContext())
         apiService.deactivateDetail(identificador).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
-                    Toast.makeText(context, "Eliminado correctamente", Toast.LENGTH_SHORT).show()
                     fetchDetailsFromApi()
                 } else {
                     Toast.makeText(context, "Error al eliminar: ${response.code()}", Toast.LENGTH_SHORT).show()
