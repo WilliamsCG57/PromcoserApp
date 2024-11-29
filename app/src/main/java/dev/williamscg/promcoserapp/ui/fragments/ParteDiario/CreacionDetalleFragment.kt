@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -21,6 +22,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 
 
 class CreacionDetalleFragment : Fragment() {
@@ -50,8 +52,15 @@ class CreacionDetalleFragment : Fragment() {
                 deactivateDetail(detalle.idDetalleParteDiario)
             }
         )
-
         recyclerView.adapter = adapter
+
+        val btnAgregar = view.findViewById<Button>(R.id.btnAgregar)
+        btnAgregar.setOnClickListener {
+            // Obtén el NavController y navega al fragmento destino
+            val navController = findNavController()
+            navController.navigate(R.id.agregarDetalleFragment)
+        }
+
         return view
     }
 

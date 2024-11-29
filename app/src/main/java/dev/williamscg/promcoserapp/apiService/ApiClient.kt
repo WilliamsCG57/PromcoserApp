@@ -32,7 +32,7 @@ class AuthInterceptor(private val context: Context) : Interceptor {
 }
 
 object ApiClient {
-    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
     private fun getOkHttpClient(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
@@ -88,7 +88,7 @@ object ApiClient {
 }
 
 object ApiClientLogIn {
-    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
     val instance: LogInApiService by lazy {
         Retrofit.Builder()
@@ -100,7 +100,7 @@ object ApiClientLogIn {
 }
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
     private val retrofit by lazy {
         Retrofit.Builder()

@@ -33,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
         val etEmailLogin = findViewById<EditText>(R.id.etEmailLogin)
         val etPasswordLogin = findViewById<EditText>(R.id.etPasswordLogin)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-        val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnLogin.setOnClickListener{
             val user =  etEmailLogin.text.toString()
