@@ -7,6 +7,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.Response
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class UnauthorizedException(message: String) : Exception(message)
 
@@ -32,7 +33,7 @@ class AuthInterceptor(private val context: Context) : Interceptor {
 }
 
 object ApiClient {
-    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
     private fun getOkHttpClient(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
@@ -88,7 +89,7 @@ object ApiClient {
 }
 
 object ApiClientLogIn {
-    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
     val instance: LogInApiService by lazy {
         Retrofit.Builder()
@@ -98,9 +99,20 @@ object ApiClientLogIn {
             .create(LogInApiService::class.java)
     }
 }
+// API Client
+object ApiClientChangePassword {
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
+    val instance: CambiarContrasenaApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(CambiarContrasenaApiService::class.java)
+    }
+}
 object RetrofitInstance {
-    private const val BASE_URL = "https://ac8d-38-25-122-10.ngrok-free.app/"
+    private const val BASE_URL = "https://0169-38-25-122-10.ngrok-free.app/"
 
     private val retrofit by lazy {
         Retrofit.Builder()

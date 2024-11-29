@@ -3,5 +3,5 @@
     <solid android:color="#FFFFFF" />  <!-- Fondo blanco -->
     <corners android:radius="16dp" />  <!-- Bordes redondeados -->
     <stroke android:color="#B0BEC5" android:width="2dp" />  <!-- Borde gris claro -->
-    <shadow android:color="#000000" android:dx="1dp" android:dy="1dp" android:radius="4dp"/>  <!-- Sombra sutil -->
+<!--    <shadow android:color="#000000" android:dx="1dp" android:dy="1dp" android:radius="4dp"/>  &lt;!&ndash; Sombra sutil &ndash;&gt;-->
 </shape>

@@ -29,4 +29,9 @@
         android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.CreacionDetalleFragment"
         android:label="fragment_creacion_detalle"
         tools:layout="@layout/fragment_creacion_detalle" />
+    <fragment
+        android:id="@+id/cambioContrasenaFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.CambioContrasenaFragment"
+        android:label="fragment_cambio_contrasena"
+        tools:layout="@layout/fragment_cambio_contrasena" />
 </navigation>
