@@ -9,7 +9,7 @@
 
     <!-- CardView para fondo redondeado gris -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewContainer"
+        android:id="@+id/cardViewContainer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/material_dynamic_neutral90"
@@ -26,84 +26,84 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/lblPlate"
+                android:id="@+id/lblPlate2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/PlacaSTR"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/txtPlate"
+                app:layout_constraintEnd_toStartOf="@id/txtPlate2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txtPlate"
+                android:id="@+id/txtPlate2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lblPlate"
+                app:layout_constraintStart_toEndOf="@id/lblPlate2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/lblDestiny"
+                android:id="@+id/lblDestiny2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/despSTR"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/txtDestiny"
+                app:layout_constraintEnd_toStartOf="@id/txtDestiny2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtPlate" />
+                app:layout_constraintTop_toBottomOf="@id/txtPlate2" />
 
             <TextView
-                android:id="@+id/txtDestiny"
+                android:id="@+id/txtDestiny2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lblDestiny"
-                app:layout_constraintTop_toBottomOf="@id/txtPlate" />
+                app:layout_constraintStart_toEndOf="@id/lblDestiny2"
+                app:layout_constraintTop_toBottomOf="@id/txtPlate2" />
 
             <TextView
-                android:id="@+id/lblReason"
+                android:id="@+id/lblReason2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/razonstr"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/txtReason"
+                app:layout_constraintEnd_toStartOf="@id/txtReason2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtDestiny" />
+                app:layout_constraintTop_toBottomOf="@id/txtDestiny2" />
 
             <TextView
-                android:id="@+id/txtReason"
+                android:id="@+id/txtReason2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lblReason"
-                app:layout_constraintTop_toBottomOf="@id/txtDestiny" />
+                app:layout_constraintStart_toEndOf="@id/lblReason2"
+                app:layout_constraintTop_toBottomOf="@id/txtDestiny2" />
 
             <TextView
-                android:id="@+id/lblDate"
+                android:id="@+id/lblDate2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/FechaSTR"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/txtDate"
+                app:layout_constraintEnd_toStartOf="@id/txtDate2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtReason" />
+                app:layout_constraintTop_toBottomOf="@+id/txtReason2" />
 
             <TextView
-                android:id="@+id/txtDate"
+                android:id="@+id/txtDate2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/lblDate"
-                app:layout_constraintTop_toBottomOf="@+id/txtReason" />
+                app:layout_constraintStart_toEndOf="@id/lblDate2"
+                app:layout_constraintTop_toBottomOf="@+id/txtReason2" />
 
             <TextView
                 android:id="@+id/lblStartTime"
@@ -112,45 +112,92 @@
                 android:text="@string/StrHoromInicial"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/txtStartTime"
+                app:layout_constraintEnd_toStartOf="@id/txtStartTime2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtDate" />
+                app:layout_constraintTop_toBottomOf="@id/txtDate2" />
 
             <TextView
-                android:id="@+id/txtStartTime"
+                android:id="@+id/txtStartTime2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/lblStartTime"
-                app:layout_constraintTop_toBottomOf="@id/txtDate" />
+                app:layout_constraintTop_toBottomOf="@id/txtDate2" />
 
-            <Button
-                android:id="@+id/btnFin"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/lblEndTime2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="56dp"
-                android:backgroundTint="@color/design_default_color_error"
-                android:text="@string/strBtnF"
-                android:textColor="#F8BBD0"
-                app:layout_constraintEnd_toStartOf="@+id/btnDetalles"
-                app:layout_constraintHorizontal_bias="0.44"
+                android:text="@string/HoroStrFin"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtEndTime2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lblStartTime" />
+                app:layout_constraintTop_toBottomOf="@id/txtStartTime2" />
+
+            <TextView
+                android:id="@+id/txtEndTime2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblEndTime2"
+                app:layout_constraintTop_toBottomOf="@id/txtStartTime2" />
+
+            <TextView
+                android:id="@+id/lblPetCount2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/CantPetStr"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtPetCount2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtEndTime2" />
+
+            <TextView
+                android:id="@+id/txtPetCount2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblPetCount2"
+                app:layout_constraintTop_toBottomOf="@id/txtEndTime2" />
+
+            <TextView
+                android:id="@+id/lblOilAmount2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/cantAceiteStr"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/txtOilAmount2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txtPetCount2" />
+
+            <TextView
+                android:id="@+id/txtOilAmount2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/lblOilAmount2"
+                app:layout_constraintTop_toBottomOf="@id/txtPetCount2" />
 
             <Button
-                android:id="@+id/btnDetalles"
+                android:id="@+id/btnDetalles2"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:layout_marginEnd="52dp"
                 android:backgroundTint="@color/white"
                 android:text="@string/strBtnDetalles"
                 android:textColor="@color/design_default_color_error"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtStartTime" />
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtOilAmount2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

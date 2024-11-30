@@ -5,15 +5,16 @@
     android:id="@+id/frameLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.CambioContrasenaFragment" >
+    tools:context=".ui.fragments.CambioContrasenaFragment">
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="202dp"
         android:layout_height="200dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="76dp"
         android:src="@drawable/perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,8 +22,7 @@
         android:id="@+id/etActualPassword"
         android:layout_width="320dp"
         android:layout_height="90dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"
         android:hint="@string/enterActualPassword"
@@ -32,6 +32,8 @@
         android:paddingEnd="16dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
@@ -39,8 +41,7 @@
         android:id="@+id/etNewPassword"
         android:layout_width="320dp"
         android:layout_height="90dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"
         android:hint="@string/enterNewPassword"
@@ -50,6 +51,8 @@
         android:paddingEnd="16dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etActualPassword" />
 
@@ -57,8 +60,7 @@
         android:id="@+id/etRepeatNewPassword"
         android:layout_width="320dp"
         android:layout_height="90dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/edit_text_bg"
         android:ems="10"
         android:hint="@string/repeatNewPassword"
@@ -68,18 +70,20 @@
         android:paddingEnd="16dp"
         android:textColor="@android:color/black"
         android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNewPassword" />
 
     <Button
         android:id="@+id/btnCambiarContrasena"
-        android:layout_width="344dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="80dp"
+        android:layout_width="272dp"
+        android:layout_height="52dp"
         android:backgroundTint="#F44336"
         android:text="@string/btnCambiarContrasena"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etRepeatNewPassword" />
 

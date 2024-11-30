@@ -5,10 +5,10 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/nav_parte_diario">
     <fragment
-        android:id="@+id/nav_maquinaria"
-        android:name="dev.williamscg.promcoserapp.ui.fragments.MaquinariaFragment"
-        android:label="MAQUINARIAS"
-        tools:layout="@layout/fragment_maquinaria" />
+        android:id="@+id/nav_historial"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.HistorialParteFragment"
+        android:label="HISTORIAL PARTES"
+        tools:layout="@layout/fragment_historial" />
     <fragment
         android:id="@+id/nav_parte_diario"
         android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.ParteDiarioFragment"
@@ -39,4 +39,9 @@
         android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.ConfirmarParteFragment"
         android:label="CONFIRMAR PARTE"
         tools:layout="@layout/fragment_confirmar_parte" />
+    <fragment
+        android:id="@+id/verDetalleParteFragment"
+        android:name="dev.williamscg.promcoserapp.ui.fragments.ParteDiario.VerDetalleParteFragment"
+        android:label="VER DETALLE PARTE"
+        tools:layout="@layout/fragment_ver_detalle_parte" />
 </navigation>

@@ -9,7 +9,7 @@
             android:icon="@drawable/baseline_assignment_24"
             android:title="@string/menu_parte" />
         <item
-            android:id="@+id/nav_maquinaria"
+            android:id="@+id/nav_historial"
             android:icon="@drawable/baseline_construction_24"
             android:title="@string/menu_maquinaria" />
         <item
