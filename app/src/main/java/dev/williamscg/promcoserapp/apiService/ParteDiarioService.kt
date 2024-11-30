@@ -1,5 +1,6 @@
 package dev.williamscg.promcoserapp.apiService
 
+import dev.williamscg.promcoserapp.model.ConfirmarNewParteDiario
 import dev.williamscg.promcoserapp.model.RequestNewParteDiario
 import dev.williamscg.promcoserapp.model.TarjetaParteDiarioModel
 import retrofit2.Response
@@ -14,4 +15,7 @@ interface ParteDiarioService {
 
     @POST("api/ParteDiario/Create")
     suspend fun crearParteDiario(@Body newParteDiario: RequestNewParteDiario): Response<Unit>
+
+    @POST("api/ParteDiario/Confirm")
+    suspend fun confirmarParteDiario(@Body confirmarNewParteDiario: ConfirmarNewParteDiario): Response<Unit>
 }

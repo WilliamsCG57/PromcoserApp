@@ -84,7 +84,6 @@ class CrearParteDiarioFragment : Fragment() {
             }
 
         }
-
         return view
     }
 

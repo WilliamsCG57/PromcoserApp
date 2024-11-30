@@ -7,7 +7,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.Response
-import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class UnauthorizedException(message: String) : Exception(message)
 
