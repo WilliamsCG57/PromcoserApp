@@ -18,7 +18,9 @@
         app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.217"
+        android:gravity="center"
+        android:background="@drawable/border_red"/>
 
     <Spinner
         android:id="@+id/spMaquinaria"
@@ -32,7 +34,9 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spLugarTrabajo"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:gravity="center"
+        android:background="@drawable/border_red"/>
 
     <Spinner
         android:id="@+id/spLugarTrabajo"
@@ -43,14 +47,18 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spCliente" />
+        app:layout_constraintTop_toBottomOf="@+id/spCliente"
+        android:gravity="center"
+        android:background="@drawable/border_red"/>
 
     <Button
         android:id="@+id/btnConfDetalle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="272dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="104dp"
+        android:backgroundTint="#F44336"
+        android:textSize="20sp"
         android:layout_marginBottom="100dp"
-        android:backgroundTint="#BA0909"
         android:text="@string/confirDetal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +78,9 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.612" />
+        app:layout_constraintVertical_bias="0.612"
+        android:gravity="center"
+        android:background="@drawable/border_red"/>
 
     <TextView
         android:id="@+id/textView3"

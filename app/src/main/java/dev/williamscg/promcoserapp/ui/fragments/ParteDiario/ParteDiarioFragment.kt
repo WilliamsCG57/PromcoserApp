@@ -52,7 +52,7 @@ class ParteDiarioFragment : Fragment() {
                 val response = RetrofitInstance.api.getParteDiario(userId)
                 val listParteDiario = response
                 adapter = TarjetaParteDiarioAdapter(
-                    listParteDiario,
+                    listParteDiario.reversed(),
                     onFinishClick = { parteDiario ->
                         // Guardar el ID en SharedPreferences antes de mostrar el modal
                         saveSelectedParteDiarioId(parteDiario.idParteDiario)

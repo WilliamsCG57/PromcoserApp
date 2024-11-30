@@ -79,12 +79,13 @@
         android:id="@+id/btnCambiarContrasena"
         android:layout_width="272dp"
         android:layout_height="52dp"
+        android:layout_marginBottom="44dp"
         android:backgroundTint="#F44336"
         android:text="@string/btnCambiarContrasena"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etRepeatNewPassword" />
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

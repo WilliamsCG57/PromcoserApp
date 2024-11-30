@@ -1,7 +1,10 @@
 package dev.williamscg.promcoserapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Button
+import android.widget.Toast
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +14,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import dev.williamscg.promcoserapp.databinding.ActivityPrincipalBinding
+import dev.williamscg.promcoserapp.model.UserRequestModel
 
 class PrincipalActivity : AppCompatActivity() {
 
@@ -28,6 +32,15 @@ class PrincipalActivity : AppCompatActivity() {
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_principal)
+
+        val btnLogOut = findViewById<Button>(R.id.btnCerrarSesion)
+
+        btnLogOut.setOnClickListener{
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
