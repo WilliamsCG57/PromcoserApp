@@ -28,7 +28,7 @@ class ConfirmarParteFragment : Fragment() {
     private lateinit var etHoraFin: EditText
     private lateinit var etCantAceite: EditText
     private lateinit var etCantPetroleo: EditText
-    private lateinit var btnConfirmar: Button
+    private lateinit var btnConfirmarPD: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,8 +41,9 @@ class ConfirmarParteFragment : Fragment() {
         etHoraFin = view.findViewById(R.id.etHoraFin)
         etCantPetroleo = view.findViewById(R.id.etCantPetroleo)
         etCantAceite = view.findViewById(R.id.etCantAceite)
+        btnConfirmarPD = view.findViewById(R.id.btnConfirmarPD)
 
-        btnConfirmar.setOnClickListener {
+        btnConfirmarPD.setOnClickListener {
             if (validate()) {
                 val confirmarNewParteDiario = ConfirmarNewParteDiario(
                     idParteDiario = idParte,
@@ -53,6 +54,7 @@ class ConfirmarParteFragment : Fragment() {
                 confirmarParteDiario(confirmarNewParteDiario)
             }
         }
+
         return view
     }
 
