@@ -108,18 +108,7 @@ object ApiClientLogIn {
             .create(LogInApiService::class.java)
     }
 }
-// API Client
-object ApiClientChangePassword {
-    private const val BASE_URL = "https://e527-38-25-122-10.ngrok-free.app/"
 
-    val instance: CambiarContrasenaApiService by lazy {
-        Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(CambiarContrasenaApiService::class.java)
-    }
-}
 object RetrofitInstance {
     private const val BASE_URL = "https://e527-38-25-122-10.ngrok-free.app/"
 

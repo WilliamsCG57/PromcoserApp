@@ -1,14 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.ParteDiario.AgregarDetalleFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/tv10"
+        android:layout_width="200dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="100dp"
+        android:background="#BA0909"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Hora Inicio"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+    <EditText
+
+        android:id="@+id/etHoraInicioDet"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_bg"
+        android:ems="10"
+        android:hint="Ingrese Hora Inicio"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv10" />
+
+    <TextView
+        android:id="@+id/tv11"
+        android:layout_width="200dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="40dp"
+        android:background="#BA0909"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Hora Fin"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etHoraInicioDet" />
+
+    <EditText
+        android:id="@+id/etHoraFinDet"
+        android:layout_width="180dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_bg"
+        android:ems="10"
+        android:hint="Ingrese hora fin"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv11" />
+
+    <TextView
+        android:id="@+id/tv12"
+        android:layout_width="200dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="40dp"
+        android:background="#BA0909"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Trabajo Efectuado"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etHoraFinDet" />
+
+    <EditText
+        android:id="@+id/etDescrTrabDet"
+        android:layout_width="332dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/edit_text_bg"
+        android:ems="10"
+        android:hint="@string/descripciontrabaajo"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv12" />
+
+    <Button
+        android:id="@+id/btnAgregarDetalle"
+        android:layout_width="165dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="108dp"
+        android:backgroundTint="#BA0909"
+        android:text="@string/btnagregarDetalle"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etDescrTrabDet" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

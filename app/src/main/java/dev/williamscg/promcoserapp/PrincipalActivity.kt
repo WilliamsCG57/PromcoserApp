@@ -2,7 +2,6 @@ package dev.williamscg.promcoserapp
 
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -32,7 +31,7 @@ class PrincipalActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_parte_diario, R.id.nav_maquinaria, R.id.nav_cambio_contrasena
+                R.id.nav_parte_diario, R.id.nav_historial, R.id.nav_cambio_contrasena
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

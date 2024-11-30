@@ -24,7 +24,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 
-
 class CreacionDetalleFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
@@ -45,7 +44,7 @@ class CreacionDetalleFragment : Fragment() {
         adapter = CreacionDetalleAdapter(
             lstCreacionDetalle = emptyList(),
             onDeleteClick = { detalle ->
-                showPopPp(detalle)
+                showDeleteConfirmationDialog(detalle) // Muestra la alerta antes de eliminar
             },
             onDetailClick = { detalle ->
                 // Acción al hacer clic en detalle
@@ -98,10 +97,28 @@ class CreacionDetalleFragment : Fragment() {
         dialog.show()
     }
 
+    private fun showDeleteConfirmationDialog(detalle: CreacionDetalleModel) {
+        val builder = AlertDialog.Builder(requireContext())
 
+        builder.setTitle("Confirmación")
+            .setMessage("¿Estás seguro que quieres eliminar este detalle?")
+            .setPositiveButton("Sí") { dialog, _ ->
+                // Si el usuario selecciona "Sí", continúa con la eliminación
+                deactivateDetail(detalle.idDetalleParteDiario)
+                dialog.dismiss()
+            }
+            .setNegativeButton("No") { dialog, _ ->
+                // Si el usuario selecciona "No", solo cierra el diálogo
+                dialog.dismiss()
+            }
+
+        // Crear y mostrar el diálogo
+        val dialog = builder.create()
+        dialog.show()
+    }
 
     private fun deactivateDetail(identificador: Int) {
-                val apiService = ApiClient.getDetalleParteApiService(requireContext())
+        val apiService = ApiClient.getDetalleParteApiService(requireContext())
         apiService.deactivateDetail(identificador).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
                 if (response.isSuccessful) {
@@ -115,7 +132,6 @@ class CreacionDetalleFragment : Fragment() {
             }
         })
     }
-
 
     private fun fetchDetailsFromApi() {
         val apiService = ApiClient.getDetalleParteApiService(requireContext())
@@ -132,7 +148,7 @@ class CreacionDetalleFragment : Fragment() {
                             showPopPp(detalle)
                         },
                         onDeleteClick = { detalle ->
-                            deactivateDetail(detalle.idDetalleParteDiario)
+                            showDeleteConfirmationDialog(detalle)
                         }
                     )
                     recyclerView.adapter = adapter
@@ -146,5 +162,4 @@ class CreacionDetalleFragment : Fragment() {
             }
         })
     }
-
 }

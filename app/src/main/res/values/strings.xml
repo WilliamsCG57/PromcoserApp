@@ -2,8 +2,8 @@
     <string name="app_name">PromcoserApp</string>
     <string name="valetEmail" />
     <string name="valetPassword" />
-    <string name="valetEmailLogin">Enter email</string>
-    <string name="valetPwd">Enter Password</string>
+    <string name="valetEmailLogin">Ingresa usuario</string>
+    <string name="valetPwd">Ingresa Contraseña</string>
     <string name="valbtnLogin">LOGIN</string>
     <string name="valbtnRegister">REGISTER</string>
     <string name="title_activity_principal">PrincipalActivity</string>
@@ -24,13 +24,13 @@
     <string name="valbtnsaveRegister">SAVE</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="menu_maquinaria">Maquinaria</string>
+    <string name="menu_maquinaria">Historial Partes Diarios</string>
     <string name="menu_parte">Parte Diario</string>
     <string name="menu_password">Cambio de Contraseña</string>
     <string name="splastext">BIENVENIDO A LA APP DE \nOPERACIONES DE PROMCOSER</string>
     <string name="crearDetalle">Crear</string>
     <string name="confirDetal">Confirmar Detalle</string>
-    <string name="masdetal">Mas Detalle</string>
+    <string name="masdetal">Más Detalle</string>
     <string name="btnCDEditar">Editar</string>
     <string name="btnCDEliminar">Eliminar</string>
     <string name="horaINI">Hor.Ini</string>
@@ -63,9 +63,14 @@
     <string name="valtvHoraInicio">Horometro Inicio</string>
     <string name="hideHoraInicio">Ingrese Hor. Inicio</string>
     <string name="valetHorometro">Hrs</string>
-    <string name="enterActualPassword">Enter Actual Password</string>
-    <string name="enterNewPassword">Enter New Password</string>
-    <string name="repeatNewPassword">Repeat New Password</string>
+    <string name="enterActualPassword">Ingresar contraseña actual</string>
+    <string name="enterNewPassword">Ingresar nueva contraseña</string>
+    <string name="repeatNewPassword">Repite la nueva contraseña</string>
     <string name="btnCambiarContrasena">Cambiar Contraseña</string>
+    <string name="retroceder">Retroceder</string>
+    <string name="guardar">Guardar</string>
+    <string name="descripciontrabaajo">Descripción</string>
+    <string name="regresarDetalleParte">Cerrar</string>
+    <string name="btnagregarDetalle">Agregar</string>
 
 </resources>
