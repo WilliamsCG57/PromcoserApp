@@ -2,8 +2,11 @@ package dev.williamscg.promcoserapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -42,8 +45,25 @@ class LoginActivity : AppCompatActivity() {
             if (user == "" || password == "") {
                 Toast.makeText(this, "Email o contraseña incompletos", Toast.LENGTH_SHORT).show()
             } else {
-                IniciarSesion(UserRequestModel(usuario = "admin", contrasena = "123"))
+                IniciarSesion(UserRequestModel(usuario = user, contrasena = password))
             }
+        }
+        val btnEye = findViewById<ImageView>(R.id.btnEye)
+
+        btnEye.setOnClickListener {
+            val currentInputType = etPasswordLogin.inputType
+
+            if (currentInputType == InputType.TYPE_TEXT_VARIATION_PASSWORD || currentInputType == (InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD)) {
+
+                etPasswordLogin.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                btnEye.setImageResource(R.drawable.eye_open)
+            } else {
+                // Cambiar a contraseña oculta
+                etPasswordLogin.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+                btnEye.setImageResource(R.drawable.eye_close)
+            }
+
+            etPasswordLogin.setSelection(etPasswordLogin.text.length)
         }
 
 

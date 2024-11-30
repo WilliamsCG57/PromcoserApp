@@ -42,16 +42,17 @@ class AgregarDetalleFragment : Fragment() {
 
         // Acción del botón guardar
         btnGuardarDetalle.setOnClickListener {
-            val horaInicio = etHoraInicio.text.toString()
-            val horaFin = etHoraFin.text.toString()
-            val descripcionTrabajo = etDescripcionTrabajo.text.toString()
+            var horaInicio = etHoraInicio.text.toString()
+            var horaFin = etHoraFin.text.toString()
+            var descripcionTrabajo = etDescripcionTrabajo.text.toString()
 
             // Validar campos
             if (horaInicio.isEmpty() || horaFin.isEmpty() || descripcionTrabajo.isEmpty()) {
                 Toast.makeText(context, "Por favor completa todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
+            horaInicio = horaInicio + ":00"
+            horaFin = horaFin + ":00"
             // Crear el modelo
             val detalleParteDiario = DetalleParteDiarioModel(
                 idParteDiario = idParte,
@@ -78,7 +79,7 @@ class AgregarDetalleFragment : Fragment() {
                     if (response.isSuccessful) {
                         findNavController().popBackStack()
                     } else {
-                        Toast.makeText(context, "Error al guardar el detalle: ${response.code()}", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Ingrese correctamente los datos.", Toast.LENGTH_SHORT).show()
                     }
                 }
             } catch (e: Exception) {
