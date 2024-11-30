@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.PromcoserApp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Personaliza tu tema aquí -->
+        <item name="android:statusBarColor">#F44336</item>
     </style>
 
     <style name="Theme.PromcoserApp" parent="Base.Theme.PromcoserApp" >
